@@ -30,6 +30,14 @@ class SubScriptions extends Component {
             })
         })
     }
+    clearMessages = () => {
+        setTimeout(function(){
+            this.setState({
+             error:false,
+            success:false
+        })
+            }.bind(this),3000)
+    }
     handleSubmit = (e) => {
         e.preventDefault();
         let email = this.state.email;
@@ -41,6 +49,7 @@ class SubScriptions extends Component {
                 error:true
             })
         }
+        this.clearMessages()
     }
 
     onChangeInput = (e) => {
